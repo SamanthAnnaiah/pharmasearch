@@ -5,7 +5,9 @@ export default async function Pharmaprofiles() {
   return (
     <>
       <div className="text-center text-yellow-500 font-extrabold text-4xl">
-        Your pharma profiles
+        {profiledata.length > 0
+          ? "Your pharma collections"
+          : "No collections added yet"}
       </div>
       <div className="flex flex-wrap justify-center gap-4 p-4">
         {profiledata.map((med, index) => (

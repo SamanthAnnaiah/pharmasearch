@@ -4,15 +4,8 @@ import { auth } from "@/app/_lib/auth";
 
 export default async function Myaccount() {
   let userdata = await getuser();
-  console.log(userdata);
   let userphone = userdata[0].phone;
-  if (!userphone) {
-    userphone = "Enter your phone number";
-  }
   let userpassport = userdata[0].passport;
-  if (!userpassport) {
-    userpassport = "Enter your passport";
-  }
   let session = await auth();
   return (
     <>
