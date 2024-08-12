@@ -59,7 +59,6 @@ export async function getsearch(FormData) {
 }
 
 export async function processsearch(search, searchtype) {
-  console.log(`The entered details are ${search} and ${searchtype}`);
   let output = "";
   switch (searchtype) {
     case "symptoms":
