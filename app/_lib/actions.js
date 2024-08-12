@@ -76,7 +76,8 @@ export async function processsearch(search, searchtype) {
 }
 
 export async function signInAction() {
-  await signIn("google", { redirectTo: "/" });
+  console.log("Trying to sign in");
+  await signIn("google", { redirectTo: { callbackUrl: "/search" } });
 }
 
 export async function signOutAction() {
