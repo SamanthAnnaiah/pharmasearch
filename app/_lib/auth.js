@@ -11,11 +11,9 @@ const authConfig = {
   ],
   callbacks: {
     authorized({ auth, request }) {
-      console.log(`Inside the authorized call back ${!!auth?.user}`);
       return !!auth?.user;
     },
     async signIn({ user, account, profile, email, credentials }) {
-      console.log("Inside the sigin callback");
       if (user.email) {
         let userid = await getuserid(user.email);
         if (!userid) {

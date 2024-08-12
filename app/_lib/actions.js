@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { auth, signIn, signOut } from "./auth";
+import { AuthError } from "next-auth";
 import {
   getlikemeds,
   getlikemedsMednames,
@@ -75,9 +76,20 @@ export async function processsearch(search, searchtype) {
   return output;
 }
 
-export async function signInAction() {
+/*export async function signInAction() {
   console.log("Trying to sign in");
-  await signIn("google", { redirectTo: { callbackUrl: "/search" } });
+  // try {
+  await signIn("google", { redirectTo: "/" });
+  // } catch (error) {
+  //   if (error instanceof AuthError) {
+  //     console.log("Auth error", error);
+  //     throw error; // Rethrow all other errors
+  //   }
+  // }
+}*/
+
+export async function signInAction() {
+  await signIn("google", { redirectTo: "/" });
 }
 
 export async function signOutAction() {
