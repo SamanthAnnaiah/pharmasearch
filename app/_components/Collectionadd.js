@@ -25,8 +25,13 @@ export function Collectionadd({ mdata }) {
             notifdata.notifresult = true;
             notifdata.notifmes = "Already a part of collection.";
           }
-          setnotif(notifdata);
+          setnotif((prev) => ({
+            ...prev,
+            notifresult: notifdata.notifresult,
+            notifmes: notifdata.notifmes,
+          }));
           setTimeout(() => {
+            console.log("Collection add notification");
             setnotif((prev) => ({
               ...prev,
               notifresult: false,
