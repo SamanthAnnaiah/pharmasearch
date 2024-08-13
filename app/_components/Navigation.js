@@ -34,7 +34,7 @@ export default async function Navigation() {
         </li>
         <li className="text-white">
           <Link href="/stats">
-            <span className="hover:text-gray-400">Stats</span>
+            <span className="hover:text-gray-400">PharmaCompanies</span>
           </Link>
         </li>
         <li className="text-white">
